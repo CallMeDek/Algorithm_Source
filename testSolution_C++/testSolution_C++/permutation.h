@@ -33,6 +33,9 @@ public:
 	//To get the answer using different method
 	int recursiveResult(int _size);
 
+	//Getting size from user if option is 2
+	void setSize();
+
 private:
 	//Making a array for obtaining the permutation
 	//you can get it by multiplying all elements of this array

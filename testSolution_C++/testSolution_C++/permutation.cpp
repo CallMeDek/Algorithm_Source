@@ -1,11 +1,11 @@
 #include "permutation.h"
 #include <iostream>
 
-Permutation::Permutation() : permu_array(nullptr), size(0), result(1) {  }
+Permutation::Permutation() : permu_array(NULL), size(0), result(1) {  }
 
 Permutation::~Permutation()
 {
-	if (permu_array == nullptr)
+	if ( NULL == permu_array)
 	{
 		std::cout << "This array is Null!!" << std::endl;
 		return;
@@ -20,6 +20,11 @@ void Permutation::getSizeFromUser()
 	std::cout << "Input a integer number used for obtain of permutaiton >> ";
 	std::cin >> this->size;
 	return;
+}
+
+void Permutation::setSize()
+{
+	getSizeFromUser();
 }
 
 void Permutation::makePermu_array()
@@ -58,7 +63,8 @@ void Permutation::calculate(int way)
 int Permutation::recursiveResult(int _size)
 {
 	if (_size == 1) return 1;
-	return _size * recursiveResult(--_size);
+	int temp = _size;
+	return _size * recursiveResult(--temp);
 }
 
 void Permutation::printResult()
@@ -68,7 +74,10 @@ void Permutation::printResult()
 
 void Permutation::execute(int option)
 {
-	makePermu_array();
+	if (option == 1)
+		makePermu_array();
+	else if (option == 2)
+		setSize();
 	calculate(option);
 	printResult();
 }
