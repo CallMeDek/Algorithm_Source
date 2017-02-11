@@ -3,6 +3,7 @@
 
 int main(void)
 {
+	Permutation a;
 
 	return 0;
 }
