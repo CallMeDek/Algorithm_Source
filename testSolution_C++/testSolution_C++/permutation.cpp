@@ -48,3 +48,9 @@ void Permutation::printResult()
 {
 	std::cout << size << "! = " << this->getResult() << "\n";
 }
+
+void Permutation::execute()
+{
+	makePermu_array();
+	printResult();
+}
