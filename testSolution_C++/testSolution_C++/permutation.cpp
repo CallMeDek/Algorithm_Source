@@ -41,6 +41,7 @@ void Permutation::calculate()
 	while (j < this->size)
 	{
 		result *= permu_array[j];
+		j++;
 	}
 }
 
