@@ -1,7 +1,7 @@
 #include "permutation.h"
 #include <iostream>
 
-Permutation::Permutation() : permu_array(nullptr), size(0) {  }
+Permutation::Permutation() : permu_array(nullptr), size(0), result(1) {  }
 
 Permutation::~Permutation()
 {
@@ -32,4 +32,27 @@ void Permutation::makePermu_array()
 
 	for (int i = 0; i < size; i++)
 		permu_array[i] = i + 1;
+}
+
+void Permutation::calculate()
+{
+	int j = 0;
+
+	while (j < this->size)
+	{
+		result *= permu_array[j];
+		j++;
+	}
+}
+
+void Permutation::printResult()
+{
+	std::cout << size << "! = " << this->getResult() << "\n";
+}
+
+void Permutation::execute()
+{
+	makePermu_array();
+	calculate();
+	printResult();
 }
