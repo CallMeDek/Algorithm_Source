@@ -15,3 +15,10 @@ Permutation::~Permutation()
 	return;
 }
 
+void Permutation::getSizeFromUser()
+{
+	std::cout << "Input a integer number used for obtain of permutaiton >> ";
+	std::cin >> this->size;
+	return;
+}
+
