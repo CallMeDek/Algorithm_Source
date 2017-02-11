@@ -31,7 +31,7 @@ public:
 	void execute(int option = 1);
 
 	//To get the answer using different method
-	int recursiveResult(int& _size);
+	int recursiveResult(int _size);
 
 private:
 	//Making a array for obtaining the permutation
