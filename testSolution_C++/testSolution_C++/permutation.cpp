@@ -53,5 +53,6 @@ void Permutation::printResult()
 void Permutation::execute()
 {
 	makePermu_array();
+	calculate();
 	printResult();
 }
