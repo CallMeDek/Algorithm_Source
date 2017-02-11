@@ -11,14 +11,23 @@ Revision contents:
 
 class combination {
 public:
-	combination();
+	combination(int, int);
 	virtual ~combination();
+private:
+	//We will pick some elements among the whole
+	int whole_comb;
+	int sub;
+	int result;
 };
 
 //We will calculate the combination using this.
 class permutation {
-	permutation();
+	permutation(int);
 	virtual ~permutation();
+private:
+	// whole_perm is range of the permutaion
+	int whole_perm;
+	int result;
 };
 
 #endif
