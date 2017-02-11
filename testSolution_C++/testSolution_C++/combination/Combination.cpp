@@ -34,3 +34,8 @@ int combination::getPermutation(int range)
 	permutation a(range);
 	return a.calculate(a.getWhole_perm());
 }
+
+void combination::printResult()
+{
+	std::cout << "C(" << whole_comb << ", " << sub << ") = " << result << std::endl;
+}

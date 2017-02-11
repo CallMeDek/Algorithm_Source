@@ -23,6 +23,8 @@ public:
 	//Creating an object and return the result 
 	int getPermutation(int);
 
+	void printResult();
+
 private:
 	//We will pick some elements among the whole
 	int whole_comb;
