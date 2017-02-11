@@ -28,7 +28,7 @@ public:
 	int getResult() const { return result; }
 
 	//This function is for executing whole process
-	void execute();
+	void execute(int option = 1);
 
 	//To get the answer using different method
 	int recursiveResult(int& _size);
