@@ -21,3 +21,13 @@ void Permutation::getSizeFromUser()
 	std::cin >> this->size;
 	return;
 }
+
+void Permutation::makePermu_array()
+{
+	//Get size in here
+	getSizeFromUser();
+
+	//Make the array dynamically
+	this->permu_array = new int[size];
+
+}
