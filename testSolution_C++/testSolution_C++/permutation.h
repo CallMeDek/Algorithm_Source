@@ -15,7 +15,8 @@ public:
 	Permutation();
 	virtual ~Permutation();
 
-
+	//Receiving the size of permutaion from the user
+	void getSizeFromUser();
 
 private:
 	//Making a array for obtaining the permutation
