@@ -34,15 +34,26 @@ void Permutation::makePermu_array()
 		permu_array[i] = i + 1;
 }
 
-void Permutation::calculate()
+void Permutation::calculate(int way)
 {
-	int j = 0;
-
-	while (j < this->size)
+	if (way == 1)
 	{
-		result *= permu_array[j];
-		j++;
+		int j = 0;
+
+		while (j < this->size)
+		{
+			result *= permu_array[j];
+			j++;
+		}
 	}
+	else if (way == 2)
+		result = recursiveResult(this->size);
+}
+
+int Permutation::recursiveResult(int& _size)
+{
+	if (_size == 1) return 1;
+	return _size * recursiveResult(--_size);
 }
 
 void Permutation::printResult()

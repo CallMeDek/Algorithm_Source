@@ -22,13 +22,16 @@ public:
 	void makePermu_array();
 
 	//To calculate
-	void calculate();
+	void calculate(int way = 1);
 
 	void printResult();
 	int getResult() const { return result; }
 
 	//This function is for executing whole process
 	void execute();
+
+	//To get the answer using different method
+	int recursiveResult(int& _size);
 
 private:
 	//Making a array for obtaining the permutation
