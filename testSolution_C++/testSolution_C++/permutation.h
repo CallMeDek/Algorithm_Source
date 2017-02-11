@@ -30,6 +30,9 @@ public:
 	//This function is for executing whole process
 	void execute();
 
+	//Its just for Debugging
+	void printArray();
+
 private:
 	//Making a array for obtaining the permutation
 	//you can get it by multiplying all elements of this array

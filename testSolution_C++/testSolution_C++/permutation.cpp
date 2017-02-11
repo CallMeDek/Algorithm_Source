@@ -53,5 +53,13 @@ void Permutation::printResult()
 void Permutation::execute()
 {
 	makePermu_array();
+	printArray();
 	printResult();
+}
+
+void Permutation::printArray()
+{
+	for (int i = 0; i < size; i++)
+		std::cout << this->permu_array[i] << " ";
+	std::cout << std::endl;
 }
