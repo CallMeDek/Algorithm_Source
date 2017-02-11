@@ -25,6 +25,8 @@ public:
 
 	void printResult();
 
+	void execute();
+
 private:
 	//We will pick some elements among the whole
 	int whole_comb;

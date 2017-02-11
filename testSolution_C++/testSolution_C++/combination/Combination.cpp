@@ -39,3 +39,11 @@ void combination::printResult()
 {
 	std::cout << "C(" << whole_comb << ", " << sub << ") = " << result << std::endl;
 }
+
+void combination::execute()
+{
+	combination a;
+	a.setVariables();
+	a.calculation();
+	a.printResult();
+}
