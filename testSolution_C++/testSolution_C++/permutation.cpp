@@ -48,6 +48,8 @@ void Permutation::calculate(int way)
 	}
 	else if (way == 2)
 		result = recursiveResult(this->size);
+	else
+		std::cout << "It's worthless option!!" << std::endl;
 }
 
 int Permutation::recursiveResult(int& _size)
@@ -61,9 +63,9 @@ void Permutation::printResult()
 	std::cout << size << "! = " << this->getResult() << "\n";
 }
 
-void Permutation::execute()
+void Permutation::execute(int option)
 {
 	makePermu_array();
-	calculate();
+	calculate(option);
 	printResult();
 }
