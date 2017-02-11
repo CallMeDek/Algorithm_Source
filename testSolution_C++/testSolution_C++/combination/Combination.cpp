@@ -1,7 +1,11 @@
 #include "Combination.h"
 #include <iostream>
 
-permutation::permutation(int range) : whole_perm(range), result(1) {}
+permutation::permutation(int range)
+{
+	whole_perm = range;
+	result = 1;
+}
 
 int permutation::calculate(int size)
 {
@@ -18,4 +22,15 @@ void combination::setVariables()
 	std::cin >> whole_comb;
 	std::cout << "Type the number of that which you wanna pick >> ";
 	std::cin >> sub;
+}
+
+void combination::calculation()
+{
+	this->result = getPermutation(whole_comb) / (getPermutation(sub) * getPermutation(whole_comb - sub));
+}
+
+int combination::getPermutation(int range)
+{
+	permutation a(range);
+	return a.calculate(a.getWhole_perm());
 }
