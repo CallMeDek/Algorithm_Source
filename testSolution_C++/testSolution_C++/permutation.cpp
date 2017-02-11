@@ -30,4 +30,6 @@ void Permutation::makePermu_array()
 	//Make the array dynamically
 	this->permu_array = new int[size];
 
+	for (int i = 0; i < size; i++)
+		permu_array[i] = i + 1;
 }
