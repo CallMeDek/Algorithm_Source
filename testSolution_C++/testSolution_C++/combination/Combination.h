@@ -12,7 +12,6 @@ Revision contents:
 class combination {
 public:
 	combination();
-	virtual ~combination();
 
 	//Setting 'whole_comb', 'sub' through what the user will type for this process
 	void setVariables();
@@ -38,7 +37,6 @@ private:
 class permutation {
 public:
 	permutation(int);
-	virtual ~permutation();
 	int calculate(int);
 
 	int getWhole_perm() { return whole_perm; }
