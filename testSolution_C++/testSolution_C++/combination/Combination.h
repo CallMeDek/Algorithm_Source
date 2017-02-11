@@ -24,6 +24,7 @@ private:
 class permutation {
 	permutation(int);
 	virtual ~permutation();
+	int calculate(int);
 private:
 	// whole_perm is range of the permutaion
 	int whole_perm;
