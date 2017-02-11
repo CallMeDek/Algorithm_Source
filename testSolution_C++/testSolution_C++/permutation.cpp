@@ -1,11 +1,11 @@
 #include "permutation.h"
 #include <iostream>
 
-Permutation::Permutation() : permu_array(nullptr), size(0), result(1) {  }
+Permutation::Permutation() : permu_array(NULL), size(0), result(1) {  }
 
 Permutation::~Permutation()
 {
-	if (permu_array == nullptr)
+	if ( NULL == permu_array)
 	{
 		std::cout << "This array is Null!!" << std::endl;
 		return;
@@ -22,6 +22,11 @@ void Permutation::getSizeFromUser()
 	return;
 }
 
+void Permutation::setSize()
+{
+	getSizeFromUser();
+}
+
 void Permutation::makePermu_array()
 {
 	//Get size in here
@@ -34,15 +39,32 @@ void Permutation::makePermu_array()
 		permu_array[i] = i + 1;
 }
 
-void Permutation::calculate()
+void Permutation::calculate(int way)
 {
-	int j = 0;
-
-	while (j < this->size)
+	if (way == 1)
 	{
-		result *= permu_array[j];
-		j++;
+		int j = 0;
+
+		while (j < this->size)
+		{
+			result *= permu_array[j];
+			j++;
+		}
 	}
+	else if (way == 2)
+	{ 
+		int temp = this->size;
+		result = recursiveResult(temp);
+	}
+	else
+		std::cout << "It's worthless option!!" << std::endl;
+}
+
+int Permutation::recursiveResult(int _size)
+{
+	if (_size == 1) return 1;
+	int temp = _size;
+	return _size * recursiveResult(--temp);
 }
 
 void Permutation::printResult()
@@ -50,9 +72,19 @@ void Permutation::printResult()
 	std::cout << size << "! = " << this->getResult() << "\n";
 }
 
-void Permutation::execute()
+void Permutation::execute(int option)
 {
-	makePermu_array();
-	calculate();
+	if (option == 1)
+		makePermu_array();
+	else if (option == 2)
+		setSize();
+	calculate(option);
 	printResult();
 }
+
+//void Permutation::printArray()
+//{
+//	for (int i = 0; i < size; i++)
+//		std::cout << this->permu_array[i] << " ";
+//	std::cout << std::endl;
+//}
