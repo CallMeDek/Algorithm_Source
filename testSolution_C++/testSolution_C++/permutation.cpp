@@ -47,7 +47,10 @@ void Permutation::calculate(int way)
 		}
 	}
 	else if (way == 2)
-		result = recursiveResult(this->size);
+	{ 
+		int temp = this->size;
+		result = recursiveResult(temp);
+	}
 	else
 		std::cout << "It's worthless option!!" << std::endl;
 }
