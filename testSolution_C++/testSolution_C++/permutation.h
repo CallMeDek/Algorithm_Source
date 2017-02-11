@@ -18,7 +18,7 @@ public:
 	//Receiving the size of permutaion from the user
 	void getSizeFromUser();
 
-	int getSize() const { return size; } 
+	int getSize() const { return size; }
 
 private:
 	//Making a array for obtaining the permutation
@@ -26,5 +26,6 @@ private:
 	int* permu_array;
 	int size;
 };
+
 
 #endif

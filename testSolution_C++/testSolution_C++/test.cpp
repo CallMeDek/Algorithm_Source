@@ -1,7 +1,7 @@
 #include <iostream>
-#include "permutation.cpp"
+#include "permutation.h"
 
-int main(int argc, char** argv)
+int main(void)
 {
 	Permutation a;
 	a.getSizeFromUser();
