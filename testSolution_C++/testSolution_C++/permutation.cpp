@@ -55,7 +55,7 @@ void Permutation::calculate(int way)
 		std::cout << "It's worthless option!!" << std::endl;
 }
 
-int Permutation::recursiveResult(int& _size)
+int Permutation::recursiveResult(int _size)
 {
 	if (_size == 1) return 1;
 	return _size * recursiveResult(--_size);
