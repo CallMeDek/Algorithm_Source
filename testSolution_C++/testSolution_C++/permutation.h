@@ -31,7 +31,7 @@ public:
 	void execute();
 
 	//Its just for Debugging
-	void printArray();
+	/*void printArray();*/
 
 private:
 	//Making a array for obtaining the permutation
