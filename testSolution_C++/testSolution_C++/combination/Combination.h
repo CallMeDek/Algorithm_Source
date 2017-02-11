@@ -11,8 +11,12 @@ Revision contents:
 
 class combination {
 public:
-	combination(int, int);
+	combination();
 	virtual ~combination();
+
+	//Setting 'whole_comb', 'sub' through what the user will type for this process
+	void setVariables();
+
 private:
 	//We will pick some elements among the whole
 	int whole_comb;
