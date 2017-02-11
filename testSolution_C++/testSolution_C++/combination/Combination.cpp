@@ -42,8 +42,7 @@ void combination::printResult()
 
 void combination::execute()
 {
-	combination a;
-	a.setVariables();
-	a.calculation();
-	a.printResult();
+	setVariables();
+	calculation();
+	printResult();
 }
