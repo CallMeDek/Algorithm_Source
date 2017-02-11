@@ -43,3 +43,8 @@ void Permutation::calculate()
 		result *= permu_array[j];
 	}
 }
+
+void Permutation::printResult()
+{
+	std::cout << size << "! = " << this->getResult() << "\n";
+}
