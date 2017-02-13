@@ -24,8 +24,18 @@ Revision contents:
 */
 
 class FastSum {
+public: 
+	FastSum(int);
 
+	//A recursive function for calculating sum
+	int fastSum(int);
+	void printResult();
 
+	void execute();
+
+private:
+	int result;
+	int size;
 };
 
 #endif

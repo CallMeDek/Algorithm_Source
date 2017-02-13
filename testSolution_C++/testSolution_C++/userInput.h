@@ -12,6 +12,7 @@
 class UserInput {
 public: 
 	UserInput();
+	int getSize() { return size; }
 	//void testCode() { std::cout << size << std::endl; };
 
 protected:
