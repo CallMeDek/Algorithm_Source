@@ -1,6 +1,7 @@
 #ifndef USER_INPUT_HEADER
 #define USER_INPUT_HEADER
 
+#include "filePath.h"
 /*
 	There are two type classes which are sub classes of super class "UserInput"
 	1. TypedInput - we get the number from User's typing
@@ -18,13 +19,15 @@ protected:
 class TypedInput : public UserInput {
 public:
 	TypedInput();
+
 };
 
 class FiledInput : public UserInput {
 public:
 	FiledInput();
 
-
+private:
+	FilePath _path;
 };
 
 #endif
