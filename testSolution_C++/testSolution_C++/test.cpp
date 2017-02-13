@@ -4,13 +4,19 @@
 
 int main(void)
 {
-	/*TypedInput a;
+	TypedInput a;
 	a.setSize();
-	a.testCode();
+	//a.testCode();
 
 	FiledInput b;
 	b.setSize();
-	b.testCode();*/
+	//b.testCode();
+
+	FastSum c(a.getSize());
+	c.execute();
+
+	FastSum d(b.getSize());
+	d.execute();
 
 	return 0;
 }
