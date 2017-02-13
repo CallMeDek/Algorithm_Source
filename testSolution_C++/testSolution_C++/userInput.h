@@ -11,6 +11,7 @@
 class UserInput {
 public: 
 	UserInput();
+
 protected:
 	int size;
 	virtual void setSize() = 0;
@@ -20,7 +21,7 @@ class TypedInput : public UserInput {
 public:
 	TypedInput();
 private:
-	void getNumFromUser();
+	void setSize();
 };
 
 class FiledInput : public UserInput {
