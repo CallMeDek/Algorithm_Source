@@ -1,5 +1,5 @@
 #ifndef FILE_PATH_HEADER
-#define FIEL_PATH_HEADER
+#define FILE_PATH_HEADER
 
 #include <string>
 /*
