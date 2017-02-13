@@ -2,6 +2,7 @@
 #define USER_INPUT_HEADER
 
 #include "filePath.h"
+//#include <iostream>
 /*
 	There are two type classes which are sub classes of super class "UserInput"
 	1. TypedInput - we get the number from User's typing
@@ -11,6 +12,7 @@
 class UserInput {
 public: 
 	UserInput();
+	//void testCode() { std::cout << size << std::endl; };
 
 protected:
 	int size;
