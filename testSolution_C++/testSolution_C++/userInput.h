@@ -30,6 +30,7 @@ public:
 
 private:
 	FilePath _path;
+	void setSize();
 };
 
 #endif
