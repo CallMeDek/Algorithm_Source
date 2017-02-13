@@ -1,5 +1,6 @@
 #include <iostream>
 #include "userInput.h"
+#include "fastSum.h"
 
 int main(void)
 {
