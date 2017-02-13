@@ -19,7 +19,8 @@ protected:
 class TypedInput : public UserInput {
 public:
 	TypedInput();
-
+private:
+	void getNumFromUser();
 };
 
 class FiledInput : public UserInput {
