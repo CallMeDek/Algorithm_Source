@@ -11,6 +11,7 @@
 class UserInput {
 public: 
 	UserInput();
+	int getSize() { return size; }
 
 protected:
 	int size;
