@@ -13,7 +13,7 @@ public:
 	UserInput();
 protected:
 	int size;
-	void setSize();
+	virtual void setSize() = 0;
 };
 
 class TypedInput : public UserInput {
