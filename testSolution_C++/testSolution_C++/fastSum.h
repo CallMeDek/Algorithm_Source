@@ -31,6 +31,8 @@ public:
 	int fastSum(int);
 	void printResult();
 
+	void execute();
+
 private:
 	int result;
 	int size;

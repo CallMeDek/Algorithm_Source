@@ -20,3 +20,9 @@ void FastSum::printResult()
 {
 	std::cout << "The sum is " << result << std::endl;
 }
+
+void FastSum::execute()
+{
+	result = fastSum(size);
+	printResult();
+}
