@@ -14,7 +14,6 @@ public:
 	// User will type the file's path in this function
 	void typeFromUser();
 
-	void setPath();
 	std::string getPath();
 private:
 	std::string path;
