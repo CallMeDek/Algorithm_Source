@@ -20,17 +20,17 @@ protected:
 class TypedInput : public UserInput {
 public:
 	TypedInput();
-private:
 	void setSize();
 };
 
 class FiledInput : public UserInput {
 public:
 	FiledInput();
+	void setSize();
 
 private:
 	FilePath _path;
-	void setSize();
+	
 };
 
 #endif
