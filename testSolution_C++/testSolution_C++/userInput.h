@@ -23,6 +23,8 @@ public:
 class FiledInput : public UserInput {
 public:
 	FiledInput();
+
+
 };
 
 #endif
