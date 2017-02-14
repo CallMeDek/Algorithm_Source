@@ -144,7 +144,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="matrix_product\divideAndConquerMatrix.cpp" />
+    <ClCompile Include="matrix_product\matrix.cpp" />
+    <ClCompile Include="matrix_product\simpleMatrix.cpp" />
     <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="matrix_product\divideAndConquerMatrix.h" />
+    <ClInclude Include="matrix_product\matrix.h" />
+    <ClInclude Include="matrix_product\simpleMatrix.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
