@@ -17,6 +17,8 @@ public:
 	//After getting size from user, Make an two-dimentional array
 	void make2DArray();
 
+	void getSizeFromUser();
+
 protected:
 	int size;
 	int** _array;
