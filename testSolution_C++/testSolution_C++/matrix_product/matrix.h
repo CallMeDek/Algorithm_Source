@@ -28,6 +28,8 @@ public:
 	int getSize() const { return size; }
 	int** getMatrix() { return _matrix; }
 
+	void execute();
+
 private:
 	int size;
 	int* _array;

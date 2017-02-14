@@ -64,8 +64,9 @@ void Matrix::printMatrix()
 		std::cout << "| ";
 		for (int j = 0; j < size; j++)
 			std::cout << _matrix[i][j] << " ";
-		std::cout << std::endl;
 		std::cout << " |";
+		std::cout << std::endl;
+		
 	}
 
 	return;
@@ -74,10 +75,17 @@ void Matrix::printMatrix()
 void Matrix::gettingNumbers()
 {
 	int i = 0;
-	_array = new int[pow(size, 2)];
+	_array = new int[(int)pow(size, 2)];
 
 	std::srand(std::time(NULL));
 	for (; i < pow(size, 2); i++)
-		_array[i] = std::rand() % 10 + 1;
+		_array[i] = std::rand() % 9 + 1;
 
+}
+
+void Matrix::execute()
+{
+	getSizeFromUser();
+	gettingNumbers();
+	make2DMatrix();
 }
