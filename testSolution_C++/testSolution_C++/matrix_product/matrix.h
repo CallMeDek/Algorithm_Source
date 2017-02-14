@@ -12,6 +12,7 @@ Revision contents:
 class Matrix {
 public:
 	Matrix();
+	
 	virtual ~Matrix();
 
 	//After getting size from user, Make an two-dimentional array
@@ -25,7 +26,7 @@ public:
 	//the numbers will be used as elements
 	void gettingNumbers();
 
-	int getSize() const { return size; }
+	int getSize() { return size; }
 	int** getMatrix() { return _matrix; }
 
 	void execute();
@@ -34,6 +35,8 @@ private:
 	int size;
 	int* _array;
 	int** _matrix;
+
+	//We wi
 };
 
 #endif

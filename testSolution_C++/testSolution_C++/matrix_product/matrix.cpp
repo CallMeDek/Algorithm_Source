@@ -79,7 +79,7 @@ void Matrix::gettingNumbers()
 
 	std::srand(std::time(NULL));
 	for (; i < pow(size, 2); i++)
-		_array[i] = std::rand() % 9 + 1;
+		_array[i] = std::rand() % 10 + 1;
 
 }
 

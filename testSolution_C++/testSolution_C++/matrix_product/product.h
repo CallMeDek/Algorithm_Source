@@ -4,9 +4,9 @@
 #include "matrix.h"
 
 class Product {
-	
+public:
 	//This function just conduct matrix product with easiest way we know
-	Matrix& simpleProduct(Matrix&, Matrix&, Matrix&);
+	void simpleProduct(Matrix&, Matrix&, Matrix&);
 
 	//It is for conducting fast product
 	Matrix& DivideConquerProduct(Matrix&, const Matrix&, const Matrix&);
