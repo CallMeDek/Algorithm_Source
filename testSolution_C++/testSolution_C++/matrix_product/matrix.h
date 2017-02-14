@@ -15,13 +15,19 @@ public:
 	virtual ~Matrix();
 
 	//After getting size from user, Make an two-dimentional array
-	void make2DArray();
+	void make2DMatrix();
 
 	void getSizeFromUser();
 
+	//To show the elements of matrix;
+	void printMatrix();
+
+	//the numbers will be used as elements
+	void gettingNumbers();
 protected:
 	int size;
-	int** _array;
+	int* _array;
+	int** _matrix;
 };
 
 #endif
