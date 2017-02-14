@@ -21,9 +21,15 @@
     <ClCompile Include="matrix_product\matrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="matrix_product\product.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matrix_product\matrix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="matrix_product\product.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

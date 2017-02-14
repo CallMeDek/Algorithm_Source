@@ -24,7 +24,11 @@ public:
 
 	//the numbers will be used as elements
 	void gettingNumbers();
-protected:
+
+	int getSize() const { return size; }
+	int** getMatrix() { return _matrix; }
+
+private:
 	int size;
 	int* _array;
 	int** _matrix;
