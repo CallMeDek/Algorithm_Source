@@ -12,16 +12,26 @@ Revision contents:
 //This solution is created for implementing involution of matrix
 
 int test_mat[2][2] = { { 1, 2 },{ 3, 4 } };
+int** identity_mat;
 
+void makeIdentityMatrix();
+void printMatrix(int**, int);
 
 int main(void)
 {
-	int i = 0, j = 0;
-	int** identity_mat;
+	makeIdentityMatrix();
+	printMatrix(identity_mat, 2);
 
+	free(identity_mat);
+	return 0;
+}
+
+void makeIdentityMatrix()
+{
+	int i = 0, j = 0;
 	identity_mat = (int**)malloc(2 * sizeof(int*));
 
-	for( ; j < 2; j++)
+	for (; j < 2; j++)
 		identity_mat[j] = (int*)malloc(2 * sizeof(int));
 
 	for (i = 0; i < 2; i++)
@@ -32,17 +42,21 @@ int main(void)
 			else identity_mat[i][j] = 0;
 		}
 	}
+}
 
-	for (i = 0; i < 2; i++)
+void printMatrix(int** mat, int size)
+{
+	int i, j;
+
+	for (i = 0; i < size; i++)
 	{
 		printf("| ");
-		for (j = 0; j < 2; j++)
+		for (j = 0; j < size; j++)
 		{
-			printf(" %d ", identity_mat[i][j]);
+			printf(" %d ", mat[i][j]);
 		}
-		printf(" |\n");
+		printf(" |");
+		if (j == size - 1) return;
+		printf("\n");
 	}
-
-	free(identity_mat);
-	return 0;
 }
