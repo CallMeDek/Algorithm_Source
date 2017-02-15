@@ -5,6 +5,8 @@
 
 class Product {
 public:
+	void setElementsToZero(Matrix&);
+
 	//This function just conduct matrix product with easiest way we know
 	void simpleProduct(Matrix&, Matrix&, Matrix&);
 

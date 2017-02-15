@@ -10,12 +10,14 @@ int main(void)
 
 	a.execute();
 	b.execute();
+	c.execute();
 
 	a.printMatrix();
 	std::cout << "---------------- \n";
 	b.printMatrix();
 
 	Product one;
+	one.setElementsToZero(c);
 	one.simpleProduct(c, a, b);
 	c.printMatrix();
 	std::cout << "---------------- \n";
