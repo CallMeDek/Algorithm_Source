@@ -23,7 +23,7 @@ int** make2DMatrix(int);
 void printMatrix(int**, int);
 
 //To seek the answer with recursive function
-int** pow(int**, int);
+int** pow(int**, int, int);
 int** product(int**, int**, int);
 int main(void)
 {
@@ -36,7 +36,7 @@ int main(void)
 	test_mat[1][0] = 3;
 	test_mat[1][1] = 4;
 
-	result_mat = product(test_mat, test_mat, 2);
+	result_mat = pow(test_mat, 2, 4);
 	printMatrix(result_mat, 2);
 
 	free(identity_mat);
@@ -114,8 +114,9 @@ int** product(int** a, int** b, int size)
 	return temp;
 }
 
-//int** pow(int** mat, int count)
-//{
-//	if (count == 1) return identity_mat;
-//	if (count % 2 == 1) 
-//}
+int** pow(int** mat, int size, int count)
+{
+	if (count == 1) return identity_mat;
+	if (count % 2 == 1) return product(mat, pow(mat, size, count--), size);
+	return product(pow(mat, size, count / 2), pow(mat, size, count / 2), size);
+}
