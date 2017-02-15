@@ -11,7 +11,7 @@ Revision contents:
 
 //This solution is created for implementing involution of matrix
 
-int test_mat[2][2] = { { 1, 2 },{ 3, 4 } };
+int** test_mat;
 int** identity_mat;
 int** result_mat;
 
@@ -19,28 +19,48 @@ int** result_mat;
 void makeIdentityMatrix(int);
 
 //For creating a N-dimentional matrix
-void make2DMatrix(int***, int);
+int** make2DMatrix(int);
 void printMatrix(int**, int);
 
+//To seek the answer with recursive function
+int** pow(int**, int);
+int** product(int**, int**, int);
 int main(void)
 {
 	makeIdentityMatrix(2);
 	printMatrix(identity_mat, 2);
 
+	test_mat = make2DMatrix(2);
+	test_mat[0][0] = 1;
+	test_mat[0][1] = 2;
+	test_mat[1][0] = 3;
+	test_mat[1][1] = 4;
+
+	result_mat = product(test_mat, test_mat, 2);
+	printMatrix(result_mat, 2);
+
 	free(identity_mat);
 	return 0;
 }
 
-void make2DMatrix(int*** mat, int size)
+int** make2DMatrix(int size)
 {
-	int k = 1;
+	int** mat;
 
-	*mat = (int**)malloc(size * sizeof(int*));
-	
+	mat = (int**)malloc(size * sizeof(int*));
+
 	for (int i = 0; i < size; i++)
 	{
-		(*mat)[i] = (int*)malloc(size * sizeof(int));
+		mat[i] = (int*)malloc(size * sizeof(int));
 	}
+
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+			mat[i][j] = 0;
+	}
+
+	return mat;
 	
 }
 
@@ -48,7 +68,7 @@ void makeIdentityMatrix(int size)
 {
 	int i = 0, j = 0;
 		
-	make2DMatrix(&identity_mat, size);
+	identity_mat = make2DMatrix(size);
 
 	for (i = 0; i < size; i++)
 	{
@@ -76,3 +96,26 @@ void printMatrix(int** mat, int size)
 		printf("\n");
 	}
 }
+
+int** product(int** a, int** b, int size)
+{
+	int** temp;
+	temp = make2DMatrix(size);
+
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			for (int k = 0; k < size; k++)
+				temp[i][j] += a[i][k] * b[k][j];
+		}
+	}
+
+	return temp;
+}
+
+//int** pow(int** mat, int count)
+//{
+//	if (count == 1) return identity_mat;
+//	if (count % 2 == 1) 
+//}
