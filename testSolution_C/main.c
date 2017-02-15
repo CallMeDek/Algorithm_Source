@@ -13,30 +13,46 @@ Revision contents:
 
 int test_mat[2][2] = { { 1, 2 },{ 3, 4 } };
 int** identity_mat;
+int** result_mat;
 
-void makeIdentityMatrix();
+//For creating an identity matrix
+void makeIdentityMatrix(int);
+
+//For creating a N-dimentional matrix
+void make2DMatrix(int***, int);
 void printMatrix(int**, int);
 
 int main(void)
 {
-	makeIdentityMatrix();
+	makeIdentityMatrix(2);
 	printMatrix(identity_mat, 2);
 
 	free(identity_mat);
 	return 0;
 }
 
-void makeIdentityMatrix()
+void make2DMatrix(int*** mat, int size)
+{
+	int k = 1;
+
+	*mat = (int**)malloc(size * sizeof(int*));
+	
+	for (int i = 0; i < size; i++)
+	{
+		(*mat)[i] = (int*)malloc(size * sizeof(int));
+	}
+	
+}
+
+void makeIdentityMatrix(int size)
 {
 	int i = 0, j = 0;
-	identity_mat = (int**)malloc(2 * sizeof(int*));
+		
+	make2DMatrix(&identity_mat, size);
 
-	for (; j < 2; j++)
-		identity_mat[j] = (int*)malloc(2 * sizeof(int));
-
-	for (i = 0; i < 2; i++)
+	for (i = 0; i < size; i++)
 	{
-		for (j = 0; j < 2; j++)
+		for (j = 0; j < size; j++)
 		{
 			if (i == j) identity_mat[i][j] = 1;
 			else identity_mat[i][j] = 0;
