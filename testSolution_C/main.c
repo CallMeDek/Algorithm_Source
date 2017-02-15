@@ -19,12 +19,14 @@ int main(void)
 	int i = 0, j = 0;
 	int** identity_mat;
 
-	for (; i < 2; i++)
-		identity_mat[i] = (int*)malloc(5 * sizeof(int));
+	identity_mat = (int**)malloc(2 * sizeof(int*));
+
+	for( ; j < 2; j++)
+		identity_mat[j] = (int*)malloc(2 * sizeof(int));
 
 	for (i = 0; i < 2; i++)
 	{
-		for (; j < 2; j++)
+		for (j = 0; j < 2; j++)
 		{
 			if (i == j) identity_mat[i][j] = 1;
 			else identity_mat[i][j] = 0;
