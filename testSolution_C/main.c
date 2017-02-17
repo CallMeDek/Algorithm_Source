@@ -116,7 +116,7 @@ int** product(int** a, int** b, int size)
 
 int** pow(int** mat, int size, int count)
 {
-	if (count == 1) return identity_mat;
-	if (count % 2 == 1) return product(mat, pow(mat, size, count--), size);
+	if (count == 1) return mat;
+	if (count % 2 > 0) return product(mat, pow(mat, size, count--), size);
 	return product(pow(mat, size, count / 2), pow(mat, size, count / 2), size);
 }
