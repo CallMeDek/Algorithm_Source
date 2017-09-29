@@ -26,6 +26,16 @@ void tournament(char** team_list, int team_number)
 	free(winner_list);
 }
 
+char* tournament_recursive(char** team_list, int start, int end)
+{
+	if (start == end) return team_list[start];
+
+	int middle = (start + end) / 2;
+	char* left = tournament_recursive(team_list, start, middle);
+	char* right = tournament_recursive(team_list, middle+1, end);
+	return match(left, right);
+}
+
 char* match(char* team1, char* team2)
 {
 	srand(time(NULL));

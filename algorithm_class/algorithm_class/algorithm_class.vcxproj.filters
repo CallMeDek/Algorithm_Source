@@ -21,9 +21,15 @@
     <ClCompile Include="tournament.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="binarysearch.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tournament.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="binarysearch.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

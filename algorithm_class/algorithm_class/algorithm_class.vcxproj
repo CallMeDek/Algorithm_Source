@@ -139,10 +139,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="binarysearch.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="tournament.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="binarysearch.h" />
     <ClInclude Include="tournament.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
