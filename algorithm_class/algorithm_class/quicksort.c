@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "quicksort.h"
+#include "common.h"
 
 void quick_sort(int start, int end, int set[])
 {
@@ -15,19 +16,16 @@ int divide(int start, int end, int set[])
 	while (s <= e)
 	{
 		while ((set[e] >= set[start]) && (s <= e)) e--;
-		while ((set[s] < set[start]) && (s <= e)) s++;
+		while ((set[s] <= set[start]) && (s <= e)) s++;
 
-		if (s < e) swap(&set[s], &set[e]);
+		if (s <= e) swap(&set[s], &set[e]);
 	}
 
 	swap(&set[e], &set[start]);
 	return e;
 }
 
-void swap(int* a, int* b)
-{
-	int temp = *a;
-	*a = *b;
-	*b = temp;
-}
+
+
+
 

@@ -30,9 +30,3 @@ int binary_serach_tree_recursive(int set[], int start, int end, int key)
 	else if (set[middle] > key) return binary_serach_tree_recursive(set, start, middle - 1, key);
 	else return binary_serach_tree_recursive(set, middle + 1, end, key);
 }
-
-void print_result(int value)
-{
-	if (value == -1) printf("\nThere's no key you want to find\n");
-	else printf("\nWe've just found it at %d \n", value);
-}

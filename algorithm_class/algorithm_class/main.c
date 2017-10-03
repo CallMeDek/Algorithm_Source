@@ -3,6 +3,9 @@
 #include "binarysearch.h"
 #include "mergesort.h"
 #include "quicksort.h"
+#include "common.h"
+#include "median.h"
+#include "multiplication.h"
 
 int main(int argc, char** argv) 
 {
@@ -26,11 +29,11 @@ int main(int argc, char** argv)
 	//result = binary_search_tree_iterative(set, sizeof(set) / sizeof(int) - 1, key);
 	//print_result(result);
 
-	////This is for the test of the multiplication algorithm
-	//int num1, num2;
-	//printf("두 수 입력>>");
-	//scanf("%d %d", &num1, &num2);
-	//printf("%d x %d = %d\n", num1, num2, multiplication(num1, num2));
+	//This is for the test of the multiplication algorithm
+	int num1, num2;
+	printf("Insert two numbers>>");
+	scanf("%d %d", &num1, &num2);
+	printf("%d x %d = %d\n", num1, num2, multiply(num1, num2));
 
 	////This is for the test of the merge sorting algorithm
 	//int arr[10] = { 5, 7, 9, 14, 1, 2, 4, 3, 23, 5 };
@@ -38,11 +41,15 @@ int main(int argc, char** argv)
 	//merge_sort(0, sizeof(arr) / sizeof(int) - 1, arr);
 	//printArr(0, sizeof(arr) / sizeof(int) - 1, arr);
 
-	//This for the test of the quick sorting algorithm
-	int arr[10] = { 5, 7, 9, 14, 1, 2, 4, 3, 23, 5 };
-	printArr(0, sizeof(arr) / sizeof(int) - 1, arr);
-	quick_sort(0, sizeof(arr) / sizeof(int) - 1, arr);
-	printArr(0, sizeof(arr) / sizeof(int) - 1, arr);
+	////This is for the test of the quick sorting algorithm
+	//int arr[10] = { 5, 7, 9, 14, 1, 2, 4, 3, 23, 5 };
+	//printArr(0, sizeof(arr) / sizeof(int) - 1, arr);
+	//quick_sort(0, sizeof(arr) / sizeof(int) - 1, arr);
+	//printArr(0, sizeof(arr) / sizeof(int) - 1, arr);
+
+	////This is for the test of the median algorithm
+	//int arr[10] = { 5, 7, 9, 14, 1, 2, 4, 3, 23, 5 };
+	//printf("%d th element of the set is %d...\n", 6, median(6, 0, sizeof(arr) / sizeof(int) - 1, arr));
 	return 0;
 }
 

@@ -31,11 +31,3 @@ void merge(int start, int middle, int end, int set[])
 	free(temp);
 }
 
-void printArr(int start, int end, int set[])
-{
-	if (start == end) printf("%d \n", set[start]);
-	else {
-		printf("%d ", set[start]);
-		printArr(start + 1, end, set);
-	}
-}
