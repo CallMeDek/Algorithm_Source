@@ -6,6 +6,7 @@
 #include "common.h"
 #include "median.h"
 #include "multiplication.h"
+#include "matrixmultiplication.h"
 
 int main(int argc, char** argv) 
 {
@@ -29,11 +30,11 @@ int main(int argc, char** argv)
 	//result = binary_search_tree_iterative(set, sizeof(set) / sizeof(int) - 1, key);
 	//print_result(result);
 
-	//This is for the test of the multiplication algorithm
-	int num1, num2;
-	printf("Insert two numbers>>");
-	scanf("%d %d", &num1, &num2);
-	printf("%d x %d = %d\n", num1, num2, multiply(num1, num2));
+	////This is for the test of the multiplication algorithm
+	//int num1, num2;
+	//printf("Insert two numbers>>");
+	//scanf("%d %d", &num1, &num2);
+	//printf("%d x %d = %d\n", num1, num2, multiply(num1, num2));
 
 	////This is for the test of the merge sorting algorithm
 	//int arr[10] = { 5, 7, 9, 14, 1, 2, 4, 3, 23, 5 };
@@ -50,8 +51,27 @@ int main(int argc, char** argv)
 	////This is for the test of the median algorithm
 	//int arr[10] = { 5, 7, 9, 14, 1, 2, 4, 3, 23, 5 };
 	//printf("%d th element of the set is %d...\n", 6, median(6, 0, sizeof(arr) / sizeof(int) - 1, arr));
+	
+	//This is for the test of the matrix multiplication algorithm
+	int X[4][4] = { { 1,0,0,0 },{ 0,1,0,0 },{ 0,0,1,0 },{ 0,0,0,1 } };
+	int Y[4][4] = { { 1,0,0,0 },{ 0,1,0,0 },{ 0,0,1,0 },{ 0,0,0,1 } };
+	int Z[4][4] = { { 0,0,0,0 },{ 0,0,0,0 },{ 0,0,0,0 },{ 0,0,0,0 } };
+	int W[4][4] = { { 0,0,0,0 },{ 0,0,0,0 },{ 0,0,0,0 },{ 0,0,0,0 } };
+
+	//allocateEle(X, sizeof(X) / sizeof(X)[0]);
+	//allocateEle(Y, sizeof(X) / sizeof(X)[0]);
+	bruteForceMultiply(X, Y, Z, sizeof(X) / sizeof(X)[0]);
+	print2DArr(Z, sizeof(X) / sizeof(X)[0]);
+
+	bestMultiply(X, Y, W, sizeof(X) / sizeof(X)[0]);
+	print2DArr(W, sizeof(X) / sizeof(X)[0]);
+
 	return 0;
 }
+
+
+
+
 
 
 
