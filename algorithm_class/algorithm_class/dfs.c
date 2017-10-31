@@ -3,8 +3,10 @@
 void execute_dfs(void)
 {
 	int n, m, u, v;
-	int i;
+	int i, clock;
 	int* visited;
+	int* prev;
+	int* post;
 	Node** heads;
 	Node** pp;
 	Node* temp;
@@ -57,13 +59,17 @@ void execute_dfs(void)
 	initVisit(&visited, n);
 
 	pp = heads;
+	init_clocking(&clock, &prev, &post, n);
 	printf("(Start!) -> ");
 	for (i = 0; i < n; i++)
 	{
-		if (!visited[i]) dfs(i + 1, &visited, pp);
+		if (!visited[i]) dfs(i + 1, &visited, pp, &clock, &prev, &post);
 	}
-
 	printf(" -> (The end)\n");
+
+	for (i = 0; i < n; i++)
+		printf(" %d (%d, %d) ", i+1, prev[i], post[i]);
+	printf("\n");
 }
 
 void update(Node** head)
@@ -193,7 +199,7 @@ void initVisit(int** visited, int node_num)
 		(*visited)[i] = 0;
 }
 
-void dfs(int node, int** visited, Node** heads)
+void dfs(int node, int** visited, Node** heads, int* clock, int** prev, int** post)
 {
 	int i;
 	Node* head = heads[node-1];
@@ -204,9 +210,30 @@ void dfs(int node, int** visited, Node** heads)
 	printf("%d ", node);
 	(*visited)[node - 1] = 1;
 
+	previsit(clock, prev, node);
 	for (i = 0; i < node_number(heads[node - 1]) - 1; i++)
 	{
-		dfs(head->next->data, visited, heads);
+		dfs(head->next->data, visited, heads, clock, prev, post);
 		head = head->next;
 	}
+	postvisit(clock, post, node);
+}
+
+void init_clocking(int* clock, int** prev, int** post, int num)
+{
+	*clock = 0;
+	(*prev) = (int*)calloc(num, sizeof(int));
+	(*post) = (int*)calloc(num, sizeof(int));
+}
+
+void previsit(int* clock, int** prev,  int node)
+{
+	*clock = *clock + 1;
+	(*prev)[node - 1] = *clock;
+}
+
+void postvisit(int* clock, int** post, int node) 
+{
+	*clock = *clock + 1;
+	(*post)[node - 1] = *clock;
 }

@@ -17,6 +17,10 @@ void update(Node**);
 Node* combine(Node*, Node*);
 
 void initVisit(int**, int);
-void dfs(int, int**, Node**);
+void dfs(int, int**, Node**, int*, int**, int**);
 
 void execute_dfs(void);
+
+void init_clocking(int*, int**, int**, int);
+void previsit(int*, int**, int);
+void postvisit(int*, int**, int);
