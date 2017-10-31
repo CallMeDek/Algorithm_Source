@@ -3,10 +3,12 @@
 void execute_dfs(void)
 {
 	int n, m, u, v;
-	int i, clock;
+	int i, j, clock, for_forest, for_scc;
 	int* visited;
 	int* prev;
 	int* post;
+	int** forest;
+	int* strongly_connected_component;
 	Node** heads;
 	Node** pp;
 	Node* temp;
@@ -60,16 +62,45 @@ void execute_dfs(void)
 
 	pp = heads;
 	init_clocking(&clock, &prev, &post, n);
+	init_forest(&forest, n, &for_forest);
 	printf("(Start!) -> ");
 	for (i = 0; i < n; i++)
 	{
-		if (!visited[i]) dfs(i + 1, &visited, pp, &clock, &prev, &post);
+		strongly_connected_component = (int*)calloc(n, sizeof(int));
+		for_scc = 0;
+		if (!visited[i]) dfs(i + 1, &visited, pp, &clock, &prev, &post, &strongly_connected_component, &for_scc);
+		forest[for_forest++] = strongly_connected_component;
+		strongly_connected_component = NULL;
 	}
 	printf(" -> (The end)\n");
 
 	for (i = 0; i < n; i++)
 		printf(" %d (%d, %d) ", i+1, prev[i], post[i]);
 	printf("\n");
+
+	i = 0;
+	for_forest--;
+	while (i < for_forest)
+	{
+		if (forest[i][0] == 0){
+			i++;
+			continue;
+		}
+		j = 0;
+		printf("Strongly connected component %d : ", i + 1);
+		while (j < n)
+		{
+			if (forest[i][j] == 0)
+			{
+				j++;
+				continue;
+			}
+			printf("%d ", forest[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
 }
 
 void update(Node** head)
@@ -199,7 +230,7 @@ void initVisit(int** visited, int node_num)
 		(*visited)[i] = 0;
 }
 
-void dfs(int node, int** visited, Node** heads, int* clock, int** prev, int** post)
+void dfs(int node, int** visited, Node** heads, int* clock, int** prev, int** post, int** scc, int* counter_scc)
 {
 	int i;
 	Node* head = heads[node-1];
@@ -208,12 +239,14 @@ void dfs(int node, int** visited, Node** heads, int* clock, int** prev, int** po
 		return;
 	}
 	printf("%d ", node);
+
+	(*scc)[(*counter_scc)++] = node;
 	(*visited)[node - 1] = 1;
 
 	previsit(clock, prev, node);
 	for (i = 0; i < node_number(heads[node - 1]) - 1; i++)
 	{
-		dfs(head->next->data, visited, heads, clock, prev, post);
+		dfs(head->next->data, visited, heads, clock, prev, post, scc, counter_scc);
 		head = head->next;
 	}
 	postvisit(clock, post, node);
@@ -236,4 +269,10 @@ void postvisit(int* clock, int** post, int node)
 {
 	*clock = *clock + 1;
 	(*post)[node - 1] = *clock;
+}
+
+void init_forest(int*** forest, int n, int* for_forest)
+{
+	(*forest) = (int**)calloc(n, sizeof(int*));
+	*for_forest = 0;
 }
