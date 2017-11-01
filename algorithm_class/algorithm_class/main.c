@@ -12,7 +12,8 @@ These are for the divide and conquer
 #include "matrixmultiplication.h"*/
 
 //#include "dfs.h"
-#include "bfs.h"
+//#include "bfs.h"
+#include "dijkstra.h"
 
 int main(int argc, char** argv) 
 {
@@ -75,13 +76,17 @@ int main(int argc, char** argv)
 	////This is for the test of dfs algorithm
 	//execute_dfs();
 
-	//This is for the test of bfs algorithm
-	execute_bfs();
+	////This is for the test of bfs algorithm
+	//execute_bfs();
+
+	//This is for the single source shortest path algorithm - dijkstra
+	execute_dijkstra();
 
 	return 0;
 }
 
 /*
+ non-weighted
  Input:
  4 5 (number of vertices, number of edges)
 
@@ -91,6 +96,33 @@ int main(int argc, char** argv)
  2 4
  3 4
 */
+
+/*
+for dijkstra
+Input:
+5 9
+
+1 2 4
+1 3 2
+2 3 3
+2 4 2
+2 5 3
+3 2 1
+3 4 4
+3 5 5
+5 4 1
+
+*/
+
+
+
+
+
+
+
+
+
+
 
 
 

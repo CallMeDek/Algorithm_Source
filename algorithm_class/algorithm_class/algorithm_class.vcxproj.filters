@@ -18,12 +18,12 @@
     <ClCompile Include="main.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="bfs.c">
+    <ClCompile Include="dijkstra.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bfs.h">
+    <ClInclude Include="dijkstra.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
