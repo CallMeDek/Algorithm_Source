@@ -11,8 +11,8 @@ These are for the divide and conquer
 #include "multiplication.h"
 #include "matrixmultiplication.h"*/
 
-#include "dfs.h"
-
+//#include "dfs.h"
+#include "bfs.h"
 
 int main(int argc, char** argv) 
 {
@@ -72,8 +72,12 @@ int main(int argc, char** argv)
 	//bestMultiply(X, Y, W, sizeof(X) / sizeof(X)[0]);
 	//print2DArr(W, sizeof(X) / sizeof(X)[0]);
 	
-	//This is for the test of dfs algorithm
-	execute_dfs();
+	////This is for the test of dfs algorithm
+	//execute_dfs();
+
+	//This is for the test of bfs algorithm
+	execute_bfs();
+
 	return 0;
 }
 
@@ -87,6 +91,8 @@ int main(int argc, char** argv)
  2 4
  3 4
 */
+
+
 
 
 
