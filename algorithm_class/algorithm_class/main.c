@@ -13,7 +13,8 @@ These are for the divide and conquer
 
 //#include "dfs.h"
 //#include "bfs.h"
-#include "dijkstra.h"
+//#include "dijkstra.h"
+#include "floyd.h" 
 
 int main(int argc, char** argv) 
 {
@@ -79,40 +80,28 @@ int main(int argc, char** argv)
 	////This is for the test of bfs algorithm
 	//execute_bfs();
 
-	//This is for the single source shortest path algorithm - dijkstra
-	execute_dijkstra();
+	////This is for the single source shortest path algorithm - dijkstra
+	//execute_dijkstra();
+
+	//This is for the all pair shortest path algorithm - floyd
+	execute_floyd();
 
 	return 0;
 }
 
 /*
- non-weighted
- Input:
- 4 5 (number of vertices, number of edges)
-
- 1 2
- 1 3
- 1 4
- 2 4
- 3 4
-*/
-
-/*
-for dijkstra
+non-weighted
 Input:
-5 9
+4 5 (number of vertices, number of edges)
 
-1 2 4
-1 3 2
-2 3 3
-2 4 2
-2 5 3
-3 2 1
-3 4 4
-3 5 5
-5 4 1
-
+1 2
+1 3
+1 4
+2 4
+3 4
 */
+
+
 
 
 

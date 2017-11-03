@@ -2,6 +2,23 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+for dijkstra
+Input:
+5 9 (# of vertices, # of edges)
+
+1 2 4
+1 3 2
+2 3 3
+2 4 2
+2 5 3
+3 2 1
+3 4 4
+3 5 5
+5 4 1
+
+*/
+
 void execute_dijkstra(void);
 
 void init(int***, int*, int*);
@@ -23,3 +40,4 @@ int** create_result_mat(int*, int);
 
 void print_result(int**, int*, int);
 void print_path(int**, int);
+
